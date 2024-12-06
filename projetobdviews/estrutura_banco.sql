@@ -1,30 +1,32 @@
-CREATE TABLE usuario (
+CREATE TABLE alunos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE professores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    nivel ENUM('adm', 'colab') NOT NULL
+    materia_aplicada VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE categoria (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE produto (
+CREATE TABLE cursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
-    preco DECIMAL(10, 2) NOT NULL,
-    estoque_minimo INT NOT NULL,
-    categoria_id INT,
-    FOREIGN KEY (categoria_id) REFERENCES categoria(id)
+    aulas_semanais INT NOT NULL
 );
 
-CREATE TABLE compra (
+CREATE TABLE matriculas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     data DATETIME NOT NULL,
-    produto_id INT,
-    quantidade INT NOT NULL,
-    FOREIGN KEY (produto_id) REFERENCES produto(id)
+    id_alunos INT NOT NULL,
+    id_professor INT NOT NULL,
+    id_curso INT NOT NULL,
+    FOREIGN KEY (id_alunos) REFERENCES alunos(id),
+    FOREIGN KEY (id_professor) REFERENCES professores(id),
+    FOREIGN KEY (id_curso) REFERENCES cursos(id)
 );
