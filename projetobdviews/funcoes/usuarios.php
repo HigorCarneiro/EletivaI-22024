@@ -55,3 +55,4 @@ function retornaUsuarioPorId(int $id): ?array{
     $usuario = $stament->fetch(PDO::FETCH_ASSOC);
     return $usuario ? $usuario : null;
 }
+?>
