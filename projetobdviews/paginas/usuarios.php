@@ -1,37 +1,34 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php'; 
-    require_once '../funcoes/usuarios.php';
+    require_once '../funcoes/alunos.php';
 ?>
 
 <div class="container mt-5">
-    <h2>Gerenciamento de Usuários</h2>
-    <a href="novo_usuario.php" class="btn btn-success mb-3">Novo Usuário</a>
+    <h2>Gerenciamento de Alunos</h2>
+    <a href="novo_aluno.php" class="btn btn-success mb-3">Novo Aluno</a>
     <table class="table table-hover table-striped">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Email</th>
-                <th>Nível</th>
-                <th>Ações</th>
+                <th>Idade</th>
             </tr>
         </thead>
         <tbody>
             
             <?php
 
-                $usuarios = todosUsuarios();
-                foreach ($usuarios as $u):
+                $alunos = todosAlunos();
+                foreach ($alunos as $a):
             ?>
 
             <tr>
-                <td><?= $u['id']?></td>
-                <td><?= $u['nome']?></td>
-                <td><?= $u['email']?></td>
-                <td><?php echo $u['nivel'] == 'adm' ? 'Administrador': 'Colaborador'; ?></td>
+                <td><?= $a['id']?></td>
+                <td><?= $a['nome']?></td>
+                <td><?= $a['idade']?></td>
                 <td>
-                    <a href="excluir_usuario.php?id=<?= $u['id']?>" class="btn btn-danger">Excluir</a>
+                    <a href="excluir_aluno.php?id=<?= $a['id']?>" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
 

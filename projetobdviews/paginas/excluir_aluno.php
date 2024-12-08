@@ -1,13 +1,13 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
-    require_once '../funcoes/usuarios.php';
+    require_once '../funcoes/alunos.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         try {
             $id = intval($_POST['id']);
-            if (excluirUsuario($id)){
-                header('Location: usuarios.php');
+            if (excluirAluno($id)){
+                header('Location: alunos.php');
                 exit();
             } else {
                 $erro = "Erro ao excluir o usuário!";
@@ -18,13 +18,13 @@
     } else {
         if (isset($_GET['id'])){
             $id = intval($_GET['id']);
-            $usuario = retornaUsuarioPorId($id);
-            if ($usuario == null){
-                header('Location: usuarios.php');
+            $aluno = retornaalunoPorId($id);
+            if ($aluno == null){
+                header('Location: alunos.php');
                 exit();
             }
         } else {
-            header('Location: usuarios.php');
+            header('Location: alunos.php');
             exit();
         }
     }
@@ -32,20 +32,19 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Excluir Usuário</h2>
+    <h2>Excluir Aluno</h2>
 
-    <p>Tem certeza de que deseja excluir o usuário abaixo?</p>
+    <p>Tem certeza de que deseja excluir o aluno abaixo?</p>
 
     <ul>
-        <li><strong>Nome: <?= $usuario['nome'] ?></strong> </li>
-        <li><strong>Email: <?= $usuario['email'] ?></strong> </li>
-        <li><strong>Nível: Colaborador</strong> </li>
+        <li><strong>Nome: <?= $aluno['nome'] ?></strong> </li>
+        <li><strong>Idade: <?= $aluno['idade'] ?></strong> </li>
     </ul>
 
     <form method="post">
-        <input type="hidden" name="id" value="<?= $usuario['id'] ?>" />
+        <input type="hidden" name="id" value="<?= $aluno['id'] ?>" />
         <button type="submit" name="confirmar" class="btn btn-danger">Excluir</button>
-        <a href="usuarios.php" class="btn btn-secondary">Cancelar</a>
+        <a href="alunos.php" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 

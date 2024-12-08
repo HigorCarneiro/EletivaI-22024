@@ -4,7 +4,7 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Editar Usuário</h2>
+    <h2>Editar Aluno</h2>
 
     <form method="post">
         <div class="mb-3">
@@ -12,12 +12,8 @@
             <input type="text" name="nome" id="nome" class="form-control" value="" required>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" id="email" class="form-control" value="" required>
-        </div>
-        <div class="mb-3">
-            <label for="senha" class="form-label">Nova Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" >
+            <label for="idade" class="form-label">Idade</label>
+            <input type="idade" name="idade" id="idade" class="form-control" value="" required>
         </div>
         <button type="submit" class="btn btn-primary">Atualizar dados</button>
     </form>

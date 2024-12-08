@@ -1,24 +1,22 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php'; 
-    require_once '../funcoes/usuarios.php';
+    require_once '../funcoes/alunos.php';
 
     $erro = "";
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         try {
             $nome = $_POST['nome'];
-            $email = $_POST['email'];
-            $senha = $_POST['senha'];
-            $nivel = 'colab';
+            $idade = $_POST['idade'];
 
-            if (empty($nome) || empty($email) || empty($senha)) {
+            if (empty($nome) || empty($idade)) {
                 $erro = "Todos os campos são obrigatórios!";
             } else {
-                if (novoUsuario($nome, $email, $senha, $nivel)){
-                    header('Location: usuarios.php');
+                if (cadastrarAluno($nome, $idade)){
+                    header('Location: alunos.php');
                     exit();
                 } else {
-                    $erro = "Erro ao criar o usuário!";
+                    $erro = "Erro ao criar o aluno!";
                 }
             }
         } catch (Exception $e){
@@ -29,7 +27,7 @@
 ?>
 
 <div class="container mt-5">
-    <h2>Criar Novo Usuário</h2>
+    <h2>Criar Novo Aluno</h2>
 
     <?php if (!empty($erro)): ?>
 
@@ -43,14 +41,10 @@
             <input type="text" name="nome" id="nome" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" id="email" class="form-control" required>
+            <label for="idade" class="form-label">Idade</label>
+            <input type="idade" name="idade" id="idade" class="form-control" required>
         </div>
-        <div class="mb-3">
-            <label for="senha" class="form-label">Senha</label>
-            <input type="password" name="senha" id="senha" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Criar Usuário</button>
+        <button type="submit" class="btn btn-primary">Criar Aluno</button>
     </form>
 </div>
 
