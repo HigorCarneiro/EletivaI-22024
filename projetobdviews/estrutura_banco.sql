@@ -21,8 +21,11 @@ CREATE TABLE professores (
 
 CREATE TABLE cursos (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(25) NOT NULL,
     descricao TEXT NOT NULL,
-    aulas_semanais INT NOT NULL
+    aulas_semanais INT NOT NULL,
+    professor_id VARCHAR(100) NOT,
+    FOREIGN KEY (professor_id) REFERENCES professores(id)
 );
 
 CREATE TABLE matriculas (

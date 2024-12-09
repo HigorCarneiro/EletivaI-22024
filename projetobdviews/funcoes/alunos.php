@@ -10,6 +10,12 @@ function cadastrarAluno(string $nome, int $idade) {
     return $stament->execute([$nome, $idade]);
 }
 
+function editarAluno(int $id, string $nome, int $idade): bool {
+        global $pdo;
+        $stmt = $pdo->prepare("UPDATE aluno SET nome = ?, idade = ? WHERE id = ?");
+        return $stmt->execute([$nome, $idade, $id]);
+    }
+
 function excluirAluno(int $id):bool{
     global $pdo;
     $stament = $pdo->prepare("DELETE FROM alunos WHERE id = ?");
@@ -28,5 +34,5 @@ function retornaAlunoPorId(int $id): ?array{
     $stament->execute([$id]);
     $aluno = $stament->fetch(PDO::FETCH_ASSOC);
     return $aluno ? $aluno : null;
-}
+} 
 ?>

@@ -10,6 +10,12 @@ function cadastrarProfessor(string $nome, string $email, string $materia_aplicad
     return $stament->execute([$nome, $email, $materia_aplicada]);
 }
 
+function editarProfessor(int $id, string $nome, string $email, string $materia_aplicada): bool {
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE professor SET nome = ?, email = ?, materia_aplicada = ? WHERE id = ?");
+    return $stmt->execute([$nome, $email, $materia_aplicada, $id]);
+}
+
 function excluirProfessor(int $id):bool{
     global $pdo;
     $stament = $pdo->prepare("DELETE FROM professores WHERE id = ?");
@@ -18,7 +24,7 @@ function excluirProfessor(int $id):bool{
 
 function todosProfessores(): array{
     global $pdo;
-    $stament = $pdo->query(" SELECT * FROM alunos");
+    $stament = $pdo->query(" SELECT * FROM professores");
     return $stament->fetchAll(PDO::FETCH_ASSOC);
 }
 

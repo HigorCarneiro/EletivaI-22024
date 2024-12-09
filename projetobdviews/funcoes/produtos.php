@@ -31,7 +31,7 @@
         $stmt->execute([$id]);
         $produto = $stmt->fetch(PDO::FETCH_ASSOC);
         return $produto ? $produto : null;
-    }
+    } 
 
     function criarProduto(string $nome, string $descricao, float $preco, 
                                 int $estoque_minimo, int $categoria_id): bool {

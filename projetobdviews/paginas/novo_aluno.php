@@ -4,6 +4,7 @@
     require_once '../funcoes/alunos.php';
 
     $erro = "";
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         try {
             $nome = $_POST['nome'];
@@ -42,7 +43,7 @@
         </div>
         <div class="mb-3">
             <label for="idade" class="form-label">Idade</label>
-            <input type="idade" name="idade" id="idade" class="form-control" required>
+            <input type="number" name="idade" id="idade" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Criar Aluno</button>
     </form>

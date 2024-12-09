@@ -2,6 +2,8 @@
     require_once 'cabecalho.php'; 
     require_once 'navbar.php'; 
     require_once '../funcoes/alunos.php';
+
+    $alunos = todosAlunos();
 ?>
 
 <div class="container mt-5">
@@ -17,17 +19,13 @@
         </thead>
         <tbody>
             
-            <?php
-
-                $alunos = todosAlunos();
-                foreach ($alunos as $a):
-            ?>
-
+            <?php foreach ($alunos as $a) : ?>
             <tr>
                 <td><?= $a['id']?></td>
                 <td><?= $a['nome']?></td>
                 <td><?= $a['idade']?></td>
                 <td>
+                    <a href="editar_aluno.php?id=<?= $a['id'] ?>" class="btn btn-warning">Editar</a>
                     <a href="excluir_aluno.php?id=<?= $a['id']?>" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
