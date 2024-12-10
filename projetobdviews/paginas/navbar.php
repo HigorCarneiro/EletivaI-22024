@@ -56,6 +56,16 @@
           </ul>
         </li>
       </ul>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="../paginas/matriculas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Matrículas
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../paginas/matriculas.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/nova_matricula.php">Cadastrar</a></li>
+          </ul>
+        </li>
+
 
       <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">

@@ -36,9 +36,9 @@ function novoUsuario(string $nome, string $email, string $senha, string $nivel):
     return $stament->execute([$nome, $email, $senha_criptografada, $nivel]);
 }
 
-function editarUsuario(int $id, string $nome, int $email, string $senha): bool {
+function editarUsuario(int $id, string $nome, string $email, string $senha): bool {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
+    $stmt = $pdo->prepare("UPDATE usuario SET nome = ?, email = ?, senha = ? WHERE id = ?");
     return $stmt->execute([$nome, $email, $senha, $id]);
 }
 

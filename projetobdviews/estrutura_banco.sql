@@ -32,8 +32,7 @@ CREATE TABLE cursos (
 
 CREATE TABLE matriculas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    data DATETIME NOT NULL,
-    id_alunos INT NOT NULL,
+    id_aluno INT NOT NULL,
     id_professor INT NOT NULL,
     id_curso INT NOT NULL,
     FOREIGN KEY (id_alunos) REFERENCES alunos(id),

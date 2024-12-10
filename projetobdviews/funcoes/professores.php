@@ -12,8 +12,8 @@ function cadastrarProfessor(string $nome, string $email, string $formacao) {
 
 function editarProfessor(int $id, string $nome, string $email, string $formacao): bool {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE professores SET nome = ?, email = ?, formacao = ? WHERE id = ?");
-    return $stmt->execute([$nome, $email, $formacao, $id]);
+    $stament = $pdo->prepare("UPDATE professores SET nome = ?, email = ?, formacao = ? WHERE id = ?");
+    return $stament->execute([$nome, $email, $formacao, $id]);
 }
 
 function excluirProfessor(int $id):bool{
@@ -28,7 +28,7 @@ function todosProfessores(): array{
     return $stament->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function retornaProfessorPorId(int $id): ?array{
+function retornaProfessorPorId(int $id): ? array{
     global $pdo;
     $stament = $pdo->prepare("SELECT * FROM professores WHERE id = ?");
     $stament->execute([$id]);
