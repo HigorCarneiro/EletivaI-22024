@@ -35,7 +35,7 @@ CREATE TABLE matriculas (
     id_aluno INT NOT NULL,
     id_professor INT NOT NULL,
     id_curso INT NOT NULL,
-    FOREIGN KEY (id_alunos) REFERENCES alunos(id),
+    FOREIGN KEY (id_aluno) REFERENCES alunos(id),
     FOREIGN KEY (id_professor) REFERENCES professores(id),
     FOREIGN KEY (id_curso) REFERENCES cursos(id)
 );

@@ -4,6 +4,7 @@
     require_once '../funcoes/cursos.php';
     require_once '../funcoes/professores.php';
 
+    $professores = todosProfessores();
     $erro = "";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){

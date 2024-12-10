@@ -4,18 +4,6 @@ declare(strict_types = 1);
 
 require_once('../config/bancodedados.php');
 
-function gerarDadosGrafico(): array {
-    global $pdo;
-    $stmt = $pdo->query("SELECT 
-                        p.id,
-                        p.nome,
-                        SUM(c.quantidade) as estoque 
-                            FROM compra c
-                            INNER JOIN produto p ON p.id = c.produto_id
-                            GROUP BY p.id");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function cadastrarMatricula(int $id_aluno, int $id_professor, int $id_curso) {
     global $pdo;
     $stament = $pdo->prepare("INSERT INTO matriculas (id_aluno, id_professor, id_curso) VALUES (?, ?, ?)");
@@ -41,3 +29,15 @@ function retornaMatriculaPorId(int $id): ?array{
     $matricula = $stament->fetch(PDO::FETCH_ASSOC);
     return $matricula ? $matricula : null;
 } 
+
+function gerarDadosGraficoMatriculas() {
+    global $pdo; 
+    $sql = "SELECT a.nome, COUNT(m.id) AS num_matriculas
+            FROM alunos a
+            LEFT JOIN matriculas m ON m.id_aluno = a.id
+            GROUP BY a.id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+?>

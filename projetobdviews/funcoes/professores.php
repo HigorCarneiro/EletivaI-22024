@@ -35,4 +35,16 @@ function retornaProfessorPorId(int $id): ? array{
     $professor = $stament->fetch(PDO::FETCH_ASSOC);
     return $professor ? $professor : null;
 }
+
+function gerarDadosGraficoProfessores() {
+    global $pdo;
+    $sql = " SELECT p.nome, COUNT(m.id) AS num_matriculas
+        FROM professores p
+        LEFT JOIN cursos c ON c.professor_id = p.id
+        LEFT JOIN matriculas m ON m.id_curso = c.id
+        GROUP BY p.id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>

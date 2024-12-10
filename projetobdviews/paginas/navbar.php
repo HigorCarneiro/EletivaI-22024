@@ -7,7 +7,7 @@
 
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/dashboard">Sistema de Gerenciamento de Cursos On-line</a>
+    <a class="navbar-brand" href="../paginas/dashboard.php">Sistema de Gerenciamento de Cursos On-line</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,8 +55,8 @@
             <li><a class="dropdown-item" href="../paginas/novo_aluno.php">Cadastrar</a></li>
           </ul>
         </li>
-      </ul>
-      <li class="nav-item dropdown">
+      
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="../paginas/matriculas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Matrículas
           </a>
@@ -65,7 +65,7 @@
             <li><a class="dropdown-item" href="../paginas/nova_matricula.php">Cadastrar</a></li>
           </ul>
         </li>
-
+      </ul>
 
       <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
