@@ -4,16 +4,16 @@ declare(strict_types = 1);
 
 require_once('../config/bancodedados.php');
 
-function cadastrarProfessor(string $nome, string $email, string $materia_aplicada) {
+function cadastrarProfessor(string $nome, string $email, string $formacao) {
     global $pdo;
-    $stament = $pdo->prepare("INSERT INTO professores (nome, email, materia_aplicada) VALUES (?, ?, ?)");
-    return $stament->execute([$nome, $email, $materia_aplicada]);
+    $stament = $pdo->prepare("INSERT INTO professores (nome, email, formacao) VALUES (?, ?, ?)");
+    return $stament->execute([$nome, $email, $formacao]);
 }
 
-function editarProfessor(int $id, string $nome, string $email, string $materia_aplicada): bool {
+function editarProfessor(int $id, string $nome, string $email, string $formacao): bool {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE professor SET nome = ?, email = ?, materia_aplicada = ? WHERE id = ?");
-    return $stmt->execute([$nome, $email, $materia_aplicada, $id]);
+    $stmt = $pdo->prepare("UPDATE professor SET nome = ?, email = ?, formacao = ? WHERE id = ?");
+    return $stmt->execute([$nome, $email, $formacao, $id]);
 }
 
 function excluirProfessor(int $id):bool{

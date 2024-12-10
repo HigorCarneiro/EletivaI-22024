@@ -10,7 +10,6 @@
 <main class="container">
     <div class="container mt-5">
         <h2>Dashboard</h2>
-
         <!-- Div onde o gráfico será renderizado -->
         <div id="chart_div" style="width: 100%; height: 500px;"></div>
     </div>

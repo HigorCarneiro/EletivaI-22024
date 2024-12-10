@@ -52,7 +52,7 @@
     <ul>
         <li><strong>Nome: <?= $professor['nome'] ?></strong> </li>
         <li><strong>E-mail: <?= $professor['email'] ?></strong> </li>
-        <li><strong>Matéria aplicada: <?= $professor['materia_aplicada'] ?></strong> </li>
+        <li><strong>Formação: <?= $professor['formacao'] ?></strong> </li>
     </ul>
 
     <form method="post">

@@ -1,3 +1,5 @@
+USE banco_php;
+
 CREATE TABLE usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -16,7 +18,7 @@ CREATE TABLE professores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    materia_aplicada VARCHAR(100) NOT NULL
+    formacao VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE cursos (
@@ -24,7 +26,7 @@ CREATE TABLE cursos (
     nome VARCHAR(25) NOT NULL,
     descricao TEXT NOT NULL,
     aulas_semanais INT NOT NULL,
-    professor_id VARCHAR(100) NOT,
+    professor_id INT,
     FOREIGN KEY (professor_id) REFERENCES professores(id)
 );
 

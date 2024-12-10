@@ -15,7 +15,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>E-mail</th>
-                <th>Matéria aplicada</th>
+                <th>Formação</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                 <td><?= $p['id']?></td>
                 <td><?= $p['nome']?></td>
                 <td><?= $p['email']?></td>
-                <td><?= $p['materia_aplicada']?></td>
+                <td><?= $p['formacao']?></td>
                 <td>
                     <a href="editar_professor.php?id=<?= $a['id'] ?>" class="btn btn-warning">Editar</a>
                     <a href="excluir_professor.php?id=<?= $a['id']?>" class="btn btn-danger">Excluir</a>

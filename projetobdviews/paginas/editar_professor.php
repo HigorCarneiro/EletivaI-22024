@@ -21,12 +21,12 @@
         try{
             $nome = $_POST['nome'];
             $email = intval($_POST['email']);
-            $materia_aplicada = $_POST['materia_aplicada'];
+            $formacao = $_POST['formacao'];
             $id = intval($_POST['id']);
             if (empty($nome)){
                 $erro = "Preencha os campos obrigatórios!";
             } else {
-                if (editarProfessor($id, $nome, $email, $materia_aplicada)){
+                if (editarProfessor($id, $nome, $email, $formacao)){
                             header('Location: professores.php');
                             exit();
                         } else {
@@ -53,8 +53,8 @@
             <input type="text" name="email" value="<?= $professor['email'] ?>" id="email" class="form-control" value="" required>
         </div>
         <div class="mb-3">
-            <label for="materia_aplicada" class="form-label">Matéria aplicada</label>
-            <input type="text" name="materia_aplicada" value="<?= $professor['materia_aplicada'] ?>" id="materia_aplicada" class="form-control" value="" required>
+            <label for="formacao" class="form-label">Matéria aplicada</label>
+            <input type="text" name="formacao" value="<?= $professor['formacao'] ?>" id="formacao" class="form-control" value="" required>
         </div>
         <button type="submit" class="btn btn-primary">Atualizar professor</button>
     </form>
