@@ -20,10 +20,10 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         try{
             $nome = $_POST['nome'];
-            $email = intval($_POST['email']);
+            $email = $_POST['email'];
             $formacao = $_POST['formacao'];
             $id = intval($_POST['id']);
-            if (empty($nome)){
+            if (empty($nome) || empty($email) || empty($formacao)){
                 $erro = "Preencha os campos obrigatórios!";
             } else {
                 if (editarProfessor($id, $nome, $email, $formacao)){

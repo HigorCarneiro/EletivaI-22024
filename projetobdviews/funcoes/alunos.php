@@ -12,9 +12,9 @@ function cadastrarAluno(string $nome, int $idade) {
 
 function editarAluno(int $id, string $nome, int $idade): bool {
         global $pdo;
-        $stmt = $pdo->prepare("UPDATE aluno SET nome = ?, idade = ? WHERE id = ?");
+        $stmt = $pdo->prepare("UPDATE alunos SET nome = ?, idade = ? WHERE id = ?");
         return $stmt->execute([$nome, $idade, $id]);
-    }
+}
 
 function excluirAluno(int $id):bool{
     global $pdo;

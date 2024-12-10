@@ -25,7 +25,7 @@ function excluirCurso(int $id):bool{
 function todosCursos(): array{
     global $pdo;
     $stament = $pdo->query("SELECT c.*, p.nome as nome_professor FROM cursos c
-                            INNER JOIN professor p ON p.id = c.professor_id");
+                            INNER JOIN professores p ON p.id = c.professor_id");
     return $stament->fetchAll(PDO::FETCH_ASSOC);
 }
 

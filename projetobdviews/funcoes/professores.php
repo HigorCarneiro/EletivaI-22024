@@ -12,7 +12,7 @@ function cadastrarProfessor(string $nome, string $email, string $formacao) {
 
 function editarProfessor(int $id, string $nome, string $email, string $formacao): bool {
     global $pdo;
-    $stmt = $pdo->prepare("UPDATE professor SET nome = ?, email = ?, formacao = ? WHERE id = ?");
+    $stmt = $pdo->prepare("UPDATE professores SET nome = ?, email = ?, formacao = ? WHERE id = ?");
     return $stmt->execute([$nome, $email, $formacao, $id]);
 }
 

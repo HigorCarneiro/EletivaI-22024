@@ -36,6 +36,12 @@ function novoUsuario(string $nome, string $email, string $senha, string $nivel):
     return $stament->execute([$nome, $email, $senha_criptografada, $nivel]);
 }
 
+function editarUsuario(int $id, string $nome, int $email, string $senha): bool {
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE usuarios SET nome = ?, email = ?, senha = ? WHERE id = ?");
+    return $stmt->execute([$nome, $email, $senha, $id]);
+}
+
 function excluirUsuario(int $id):bool{
     global $pdo;
     $stament = $pdo->prepare("DELETE FROM usuario WHERE id = ?");

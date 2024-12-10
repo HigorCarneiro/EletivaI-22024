@@ -27,8 +27,8 @@
                 <td><?= $p['email']?></td>
                 <td><?= $p['formacao']?></td>
                 <td>
-                    <a href="editar_professor.php?id=<?= $a['id'] ?>" class="btn btn-warning">Editar</a>
-                    <a href="excluir_professor.php?id=<?= $a['id']?>" class="btn btn-danger">Excluir</a>
+                    <a href="editar_professor.php?id=<?= $p['id'] ?>" class="btn btn-warning">Editar</a>
+                    <a href="excluir_professor.php?id=<?= $p['id']?>" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             <?php endforeach; ?>            

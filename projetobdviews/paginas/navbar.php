@@ -14,49 +14,45 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-        <!-- Após desenvolver o código em PHP, essa funcionalidade só será visível ao administrador -->
-         <!-- Início -->
-        <?php
-          if ($_SESSION['nivel'] == 'adm'):
-        ?>
+        <?php if ($_SESSION['nivel'] == 'adm'): ?>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="../paginas/usuarios.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Usuários
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="usuarios.php">Gerenciar</a></li>
+              <li><a class="dropdown-iten" href="novo_usuario.php">Cadastrar</a></li>
             </ul>
           </li>
-        <?php
-          endif;
-        ?>
-         <!-- Fim -->
+        <?php endif; ?>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorias
+          <a class="nav-link dropdown-toggle" href="../paginas/cursos.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cursos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="categorias.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/cursos.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/novo_curso.php">Cadastrar</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Produtos
+          <a class="nav-link dropdown-toggle" href="../paginas/professores.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Professores
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="produtos.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/professores.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/novo_professor.php">Cadastrar</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Compras
+          <a class="nav-link dropdown-toggle" href="../paginas/alunos.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Alunos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="compras.php">Gerenciar</a></li>
-            <li><a class="dropdown-item" href="relatorio_compras.php">Relatórios</a></li>
+            <li><a class="dropdown-item" href="../paginas/alunos.php">Gerenciar</a></li>
+            <li><a class="dropdown-item" href="../paginas/novo_aluno.php">Cadastrar</a></li>
           </ul>
         </li>
       </ul>
